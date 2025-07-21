@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Resto Ivan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Bienvenido a Resto Iván, un restaurante único en Córdoba, donde ofrecemos comida deliciosa y un ambiente acogedor. ¡Haz tu reserva hoy!">
+    <meta name="keywords" content="restaurante, Córdoba, comida, menú, reservas, cocina, experiencia gastronómica">
+    <meta name="author" content="Iván">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light px-3" role="navigation" aria-label="Menú principal de navegación">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center" aria-label="Ir a la página de inicio">
+          <img src="assets/img/LogoResto.png" alt="Logo de Resto Ivan" class="logo">
+        </a>
+
+        <!-- Toggler (menú hamburguesa en móviles) -->
+        <button class="navbar-toggler text-black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Mostrar/Ocultar menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Título central -->
+        <div class="mx-auto text-black fw-bold fs-5 text-center">
+          <span aria-label="Restaurante Iván">Resto Iván</span> 
+        </div>
+
+        <!-- Contenido del navbar -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContenido">
+          <ul class="navbar-nav d-flex flex-wrap gap-2 ms-auto">
+            <li class="nav-item">
+              <a href="index.html" class="btn btn-outline-light active" title="Ir a la página principal de Resto Iván">
+                <i class="bi bi-house me-1"></i>Inicio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="carta.html" class="btn btn-outline-light" title="Ver la carta de Resto Iván">
+                <i class="bi bi-journal-text me-1"></i>Carta
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="reservas.html" class="btn btn-outline-light" title="Hacer una reserva en Resto Iván">
+                <i class="bi bi-calendar-check me-1"></i>Reservas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="ubicacion.html" class="btn btn-outline-light" title="Ver ubicación de Resto Iván en el mapa">
+                <i class="bi bi-geo-alt-fill me-1"></i>Ubicación
+              </a>
+            </li>
+            <li class="nav-item">
+                <a href="galeria.html" class="btn btn-outline-light" title="Ver la galería de fotos de Resto Iván">
+                  <i class="bi bi-images me-1"></i>Galería
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección hero: texto e imagen -->
+    <section class="hero d-flex align-items-center" aria-label="Sección de bienvenida">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Columna izquierda: texto -->
+          <div class="col-md-6 text-start text-white">
+            <h1 class="display-4 fw-bold" aria-label="Bienvenidos a nuestro restaurante">Bienvenidos a Nuestro Restaurante</h1>
+            <p class="lead mb-4" aria-label="Nuestra comida es casera, nuestro sabor es auténtico">Cocina casera, sabor auténtico.</p>
+            <a href="carta.html" class="btn btn-danger btn-lg me-2" aria-label="Ver el menú completo de nuestro restaurante">Ver Menú</a>
+            <a href="reservas.html" class="btn btn-outline-light btn-lg" aria-label="Realizar una reserva en nuestro restaurante">Reservar</a>
+          </div>
+          <!-- Columna derecha: imagen rotativa -->
+          <div class="col-md-6 text-center">
+            <img src="assets/img/imagenrotativa.png" alt="Imagen rotativa mostrando parrillada" class="imagen-rotativa" aria-label="Imagen rotativa mostrando parrillada">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------         Divider         -------->
+    <div class="divider">
+      <span class="line"></span>
+      <i class="fas fa-utensils"></i>
+      <span class="line"></span>
+    </div>
+    <!--------         Sobre nosotros         -------->
+    <section class="sobre-nosotros py-5 bg-light" aria-labelledby="sobre-nosotros">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <img src="assets/img/sobrenosotros.jpg" class="img-fluid rounded shadow" alt="Imagen de nuestra historia" aria-label="Imagen representativa de nuestro restaurante">
+          </div>
+          <div class="col-md-6">
+            <h2 class="mb-3" id="sobre-nosotros" aria-label="Información sobre nuestro restaurante" aria-describedby="sobre-nosotros-desc">Sobre Nosotros</h2>
+            <p id="sobre-nosotros-desc">Somos un restaurante familiar con pasión por la comida casera y los ingredientes frescos. Cada plato está hecho con dedicación, buscando que cada cliente se sienta como en casa.</p>
+            <p class="mb-0">Nuestra misión es ofrecer una experiencia culinaria cálida y deliciosa para toda la comunidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Resto Iván — Todos los derechos reservados.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var togglerButton = document.querySelector('.navbar-toggler');
+    var navbarContent = document.querySelector('#navbarContenido');
+    document.addEventListener('click', function (e) {
+      if (!navbarContent.contains(e.target) && !togglerButton.contains(e.target)) {
+        if (navbarContent.classList.contains('show')) {
+          navbarContent.classList.remove('show');
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+
+
+
+</html>

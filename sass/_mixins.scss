@@ -1,0 +1,23 @@
+@use 'variables';
+
+@mixin texto-principal {
+font-family: variables.$fuente-principal;
+color: variables.$color-texto;
+font-size: variables.$tamaño-texto-base;
+}
+
+@mixin titulo {
+font-family: variables.$fuente-principal;
+font-weight: 700;
+color: variables.$color-principal;
+}
+
+@mixin contenedor-carta {
+max-width: 800px;
+margin: 3rem auto;
+padding: 2rem;
+background-color: variables.$color-fondo;
+border-radius: variables.$radio-bordes;
+border: 2px solid variables.$color-principal;
+box-shadow: variables.$sombra-box;
+}
