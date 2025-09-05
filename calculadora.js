@@ -16,7 +16,6 @@ loadHistoryFromStorage();
 setupNavbarToggle();
 
 function setupEventListeners() {
-    // Manejar cambios en la selección de propina
     document.querySelectorAll('input[name="includeTip"]').forEach(radio => {
         radio.addEventListener('change', function() {
             if (this.value === 'yes') {
@@ -29,17 +28,12 @@ function setupEventListeners() {
         });
     });
 
-    // Manejar selección de opciones de propina
     document.querySelectorAll('.tip-option').forEach(option => {
         option.addEventListener('click', function() {
-            // Remover selección previa
             document.querySelectorAll('.tip-option').forEach(opt => opt.classList.remove('selected'));
-            
-            // Seleccionar la opción actual
             this.classList.add('selected');
             selectedTipOption = this.dataset.tip;
             
-            // Mostrar/ocultar campo de propina personalizada
             if (selectedTipOption === 'custom') {
                 customTip.classList.add('show');
             } else {
@@ -48,13 +42,11 @@ function setupEventListeners() {
         });
     });
 
-    // Manejar envío del formulario
     calculatorForm.addEventListener('submit', function(e) {
         e.preventDefault();
         calcularDivisionCuenta();
     });
 
-    // Botones de historial
     document.getElementById('showHistory').addEventListener('click', function() {
         toggleHistorySection();
     });
@@ -65,12 +57,10 @@ function setupEventListeners() {
 }
 
 function calcularDivisionCuenta() {
-    // Obtener valores del formulario
     const totalPrice = parseFloat(document.getElementById('totalPrice').value);
     const peopleCount = parseInt(document.getElementById('peopleCount').value);
     const includeTip = document.querySelector('input[name="includeTip"]:checked')?.value === 'yes';
 
-    // Validaciones
     if (isNaN(totalPrice) || totalPrice <= 0) {
         showError('Por favor, ingrese un precio válido mayor a 0.');
         return;
@@ -101,11 +91,9 @@ function calcularDivisionCuenta() {
         }
     }
 
-    // Calcular total con propina
     const totalWithTip = totalPrice + tipAmount;
     const amountPerPerson = totalWithTip / peopleCount;
 
-    // Crear objeto de resultado
     const resultado = {
         precioTotal: totalPrice,
         cantidadComensales: peopleCount,
@@ -130,7 +118,6 @@ function calcularDivisionCuenta() {
 }
 
 function mostrarResultado(resultado) {
-    // Actualizar valores en la interfaz
     document.getElementById('originalPrice').textContent = `$${resultado.precioTotal.toFixed(2)}`;
     document.getElementById('tipAmount').textContent = `$${resultado.propina.toFixed(2)}`;
     document.getElementById('totalWithTip').textContent = `$${resultado.totalConPropina.toFixed(2)}`;
@@ -155,7 +142,6 @@ function guardarEnHistorial(resultado) {
     // Guardar en localStorage
     localStorage.setItem('historialCalculadora', JSON.stringify(historialCuentas));
     
-    // Actualizar historial en la interfaz
     updateHistoryDisplay();
 }
 
@@ -170,7 +156,7 @@ function updateHistoryDisplay() {
     historialCuentas.forEach((cuenta, index) => {
         const historyItem = document.createElement('div');
         historyItem.className = 'history-item';
-        
+    // Perdón por poner esto acá :(    
         historyItem.innerHTML = `
             <h4>Cuenta #${index + 1} - ${cuenta.fecha}</h4>
             <div class="history-details">
@@ -214,7 +200,7 @@ function toggleHistorySection() {
 }
 
 function clearHistory() {
-    // Crear modal de confirmación
+
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
     
@@ -231,7 +217,7 @@ function clearHistory() {
     
     document.body.appendChild(modal);
     
-    // Event listeners para los botones
+    // Eventos para los botones
     document.getElementById('confirmClear').addEventListener('click', function() {
         historialCuentas = [];
         localStorage.removeItem('historialCalculadora');
@@ -257,12 +243,9 @@ function loadHistoryFromStorage() {
 }
 
 function showError(message) {
-    // Crear notificación de error
     const notification = document.createElement('div');
     notification.className = 'notification notification-error';
     notification.textContent = message;
-    
-    // Asegurar que la notificación sea visible
     notification.style.zIndex = '9999';
     notification.style.position = 'fixed';
     notification.style.top = '20px';
@@ -270,7 +253,6 @@ function showError(message) {
     
     document.body.appendChild(notification);
     
-    // Auto-remover después de 4 segundos
     setTimeout(() => {
         if (document.body.contains(notification)) {
             document.body.removeChild(notification);
@@ -279,14 +261,12 @@ function showError(message) {
 }
 
 function showSuccessMessage(message) {
-    // Crear notificación de éxito
     const notification = document.createElement('div');
     notification.className = 'notification notification-success';
     notification.textContent = message;
     
     document.body.appendChild(notification);
     
-    // Auto-remover después de 3 segundos
     setTimeout(() => {
         if (document.body.contains(notification)) {
             document.body.removeChild(notification);
